@@ -147,7 +147,38 @@ void softtwinkles() {
  
 
 
+/*
+; Et lys bevæger sig langsomt og ikke i en fast fart. Skifter farve på hver ny tur.
+void testpattern(){
+static int testLEDnr = 1;
+static int colorindex = 1;
+if (testLEDnr == 1) { colorindex = random8(); }
+fadeToBlackBy(leds, NUM_LEDS, 1); //Sluk alle LEDs.
+leds[testLEDnr] = ColorFromPalette(currentPalette, colorindex);
+if (random8(1, 7) > 4){
+testLEDnr++;
+}
+//	testLEDnr = (testLEDnr + (random8(1, 7) - 2));
+if (testLEDnr > NUM_LEDS) { testLEDnr = 0; }
+}
 
+//-----------------------------
+
+// Begyndelsen på en BPM funktion.
+
+void bpmpattern(){
+fill_solid(leds, NUM_LEDS, CRGB::Black); // kun en led skal køre det her.
+
+int bpm = beat8(180);
+for (int i = 0; i < NUM_LEDS; i++) {
+	//		leds[i] = CRGB::Blue;
+	int wave = cubicwave8(bpm);
+	//		int wave = bpm;
+	int wave2 = map(wave, 1, 256, 1, 100);
+	if (i <= wave2) { leds[i] = CRGB::Blue; }
+}
+}
+*/
 
 
 
