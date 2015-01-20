@@ -337,7 +337,7 @@ void menuUsed(MenuUseEvent used){
       if (brightness <= 9) {lcd.print(" ");} 
       lcd.print(brightness);
   }
-
+  if (used.item == "ItemPalette20") { ColorPaletteNumber = 20; }
 
 //  lcd.setCursor(0,0);  
 //  lcd.print("Arduino Lights");
@@ -534,16 +534,4 @@ void loop()
   FastLED.show();
   FastLED.delay(1000 / Updates_per_Second);
 } //loop()... 
-
-void test()
-{
-MenuItem NuMenu = menu.getCurrent();  
-
-//MenuItem TidligereMenu;
-//TidligereMenu = NuMenu.getBack;  
-//MenuItem Test = NuMenu.getBefore();  
-  MenuItem *miLine3 = menu.getCurrent().getBack();
-//MenuItem Test1 = Test.getBefore();  
-  
-}
 
